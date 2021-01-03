@@ -1,0 +1,90 @@
+.frame {
+	font-size: 15px;
+	padding: 3rem;
+	text-align: center;
+	position: relative;
+	z-index: 1000;
+}
+
+.frame__title {
+	font-size: 15px;
+	margin: 0 0 15px;
+	font-weight: normal;
+}
+
+.frame__links {
+	margin-top: 15px;
+}
+
+.frame__links a:not(:last-child),
+.frame__demos a:not(:last-child) {
+	margin-right: 15px;
+}
+
+.frame__demos {
+	margin: 15px 0;
+}
+
+.frame__demo--current,
+.frame__demo--current:hover {
+  @extend %link;
+}
+
+@media screen and (min-width: 53em) {
+	.frame {
+		position: fixed;
+		text-align: left;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		display: grid;
+		align-content: space-between;
+		width: 100%;
+		max-width: none;
+		height: 100vh;
+		padding: 3rem;
+		pointer-events: none;
+		grid-template-columns: 75% 25%;
+		grid-template-rows: auto auto auto;
+		grid-template-areas: 'title links'
+							'... ...'
+							'credits demos';
+  }
+
+	.frame__title-wrap {
+		grid-area: title;
+		display: flex;
+  }
+
+	.frame__title {
+		margin: 0;
+  }
+
+	.frame__tagline {
+		position: relative;
+		margin: 0 0 0 1rem;
+		padding: 0 0 0 1rem;
+		opacity: 0.5;
+  }
+
+	.frame__demos {
+		margin: 0;
+		grid-area: demos;
+		justify-self: end;
+  }
+
+	.frame__links {
+		grid-area: links;
+		padding: 0;
+		justify-self: end;
+    white-space: nowrap;
+  }
+
+	.frame a {
+		pointer-events: auto;
+  }
+
+  .frame__credits {
+    grid-area: credits;
+  }
+}

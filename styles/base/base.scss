@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  background: $color-black;
+  color: $color-white;
+  font-size: calc(100vw / 1920 * 10);
+  user-select: none;
+}
+
+body {
+  font-family: 'halyard-display', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+}
+
+canvas {
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+a {
+  @extend %link--hidden;
+
+  color: $color-white;
+  outline: none;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
