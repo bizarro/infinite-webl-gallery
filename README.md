@@ -31,6 +31,7 @@ npm run build
 ## Misc
 
 Follow Luis Henrique Bizarro: [Website](https://bizar.ro/), [Twitter](https://twitter.com/lhbizarro), [GitHub](https://github.com/lhbizarro)
+
 Follow Codrops: [Twitter](http://www.twitter.com/codrops), [Facebook](http://www.facebook.com/codrops), [GitHub](https://github.com/codrops), [Instagram](https://www.instagram.com/codropsss/)
 
 ## License
