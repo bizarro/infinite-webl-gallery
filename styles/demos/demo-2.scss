@@ -32,9 +32,9 @@
 
 .demo-2__gallery {
   height: 100%;
-  opacity: 0;
   position: relative;
   width: 520rem;
+  visibility: hidden;
 }
 
 .demo-2__gallery__figure {

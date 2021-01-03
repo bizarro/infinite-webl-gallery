@@ -13,7 +13,28 @@ html {
   background: $color-black;
   color: $color-white;
   font-size: calc(100vw / 1920 * 10);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
   user-select: none;
+  width: 100%;
+
+  &:after {
+    animation: grain 6s steps(10) infinite;
+    background-image: url('../images/grain.png');
+    background-repeat: repeat;
+    content: '';
+    height: 300%;
+    left: -100%;
+    opacity: 0.06;
+    pointer-events: none;
+    position: fixed;
+    top: -100%;
+    width: 300%;
+    will-change: transform;
+    z-index: 3;
+  }
 }
 
 body {
@@ -47,4 +68,18 @@ a {
   &:focus {
     outline: none;
   }
+}
+
+@keyframes grain {
+  0% { transform: translate(20%, -15%) }
+  10% { transform: translate(-20%, -15%) }
+  20% { transform: translate(20%, -5%) }
+  30% { transform: translate(-20%, -5%) }
+  40% { transform: translate(20%, 5%) }
+  50% { transform: translate(-20%, 5%) }
+  60% { transform: translate(20%, 15%) }
+  70% { transform: translate(-20%, 15%) }
+  80% { transform: translate(20%, 5%) }
+  90% { transform: translate(-20%, 5%) }
+  100% { transform: translate(20%, -5%) }
 }

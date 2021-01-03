@@ -14,6 +14,8 @@ export default class App {
       last: 0
     }
 
+    this.speed = 2
+
     this.createRenderer()
     this.createCamera()
     this.createScene()
@@ -146,12 +148,16 @@ export default class App {
    * Update.
    */
   update () {
+    this.scroll.target += this.speed
+
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease)
 
     if (this.scroll.current > this.scroll.last) {
       this.direction = 'down'
+      this.speed = 2
     } else if (this.scroll.current < this.scroll.last) {
       this.direction = 'up'
+      this.speed = -2
     }
 
     if (this.medias) {

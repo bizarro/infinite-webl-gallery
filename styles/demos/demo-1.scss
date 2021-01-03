@@ -33,8 +33,8 @@
 
 .demo-1__gallery {
   height: 295rem;
-  opacity: 0;
   position: relative;
+  visibility: hidden;
 }
 
 .demo-1__gallery__figure {

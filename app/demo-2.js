@@ -15,6 +15,8 @@ export default class App {
       last: 0
     }
 
+    this.speed = 2
+
     this.createRenderer()
     this.createCamera()
     this.createScene()
@@ -101,14 +103,14 @@ export default class App {
     this.isDown = true
 
     this.scroll.position = this.scroll.current
-    this.start = event.touches ? event.touches[0].clientY : event.clientY
+    this.start = event.touches ? event.touches[0].clientX : event.clientX
   }
 
   onTouchMove (event) {
     if (!this.isDown) return
 
-    const y = event.touches ? event.touches[0].clientY : event.clientY
-    const distance = (this.start - y) * 2
+    const x = event.touches ? event.touches[0].clientX : event.clientX
+    const distance = (this.start - x) * 2
 
     this.scroll.target = this.scroll.position + distance
   }
@@ -168,12 +170,16 @@ export default class App {
    * Update.
    */
   update () {
+    this.scroll.target += this.speed
+
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease)
 
     if (this.scroll.current > this.scroll.last) {
       this.direction = 'down'
+      this.speed = 2
     } else if (this.scroll.current < this.scroll.last) {
       this.direction = 'up'
+      this.speed = -2
     }
 
     if (this.medias) {

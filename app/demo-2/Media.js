@@ -101,7 +101,7 @@ export default class {
       this.isAfter = false
     }
 
-    this.plane.program.uniforms.uStrength.value = ((x.current - x.last) / this.screen.width) * 30
+    this.plane.program.uniforms.uStrength.value = ((x.current - x.last) / this.screen.width) * 5
   }
 
   /**
