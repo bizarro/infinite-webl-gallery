@@ -43,6 +43,7 @@ body {
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  overscroll-behavior-y: none;
 }
 
 img {
