@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 *,
@@ -19,22 +19,6 @@ html {
   top: 0;
   user-select: none;
   width: 100%;
-
-  &:after {
-    animation: grain 6s steps(10) infinite;
-    background-image: url('../images/grain.png');
-    background-repeat: repeat;
-    content: '';
-    height: 300%;
-    left: -100%;
-    opacity: 0.06;
-    pointer-events: none;
-    position: fixed;
-    top: -100%;
-    width: 300%;
-    will-change: transform;
-    z-index: 3;
-  }
 }
 
 body {
@@ -44,6 +28,40 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   overscroll-behavior-y: none;
+
+  &:after {
+    animation: grain 6s steps(10) infinite;
+    background-image: url('../images/grain.png');
+    background-repeat: repeat;
+    content: '';
+    height: 300%;
+    left: -100%;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: -100%;
+    transition: opacity 0.4s ease;
+    width: 300%;
+    will-change: transform;
+    z-index: 3;
+  }
+
+  .loaded &:after {
+    opacity: 0.06;
+  }
+}
+
+body #cdawrap {
+  --cda-bottom: 3rem;
+  --cda-left: 3rem;
+  --cda-width: 400px;
+  --cda-footer-fontsize: initial;
+  --cda-footer-color: rgba(255,255,255,0.5);
+}
+
+body #cdawrap a:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }
 
 img {
@@ -53,9 +71,15 @@ img {
 canvas {
   height: 100%;
   left: 0;
+  opacity: 0;
   position: fixed;
   top: 0;
+  transition: opacity 1s ease;
   width: 100%;
+
+  .loaded & {
+    opacity: 1
+  }
 }
 
 a {
