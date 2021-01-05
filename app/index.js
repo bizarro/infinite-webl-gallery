@@ -9,7 +9,7 @@ new demos[demo]()
 document.documentElement.classList.remove('no-js')
 document.documentElement.classList.add('js')
 
-const images = document.querySelectorAll('img')
+const images = document.querySelectorAll('img:not([src*="https://tympanus.net/codrops/wp-content/banners/"])')
 let imagesIndex = 0
 
 Array.from(images).forEach(element => {
