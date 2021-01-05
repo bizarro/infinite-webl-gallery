@@ -28,6 +28,11 @@ Create the build:
 npm run build
 ```
 
+## Credits
+
+- https://unsplash.com/@planeteelevene
+- https://unsplash.com/@jayson_hinrichsen
+
 ## Misc
 
 Follow Luis Henrique Bizarro: [Website](https://bizar.ro/), [Twitter](https://twitter.com/lhbizarro), [GitHub](https://github.com/lhbizarro)
