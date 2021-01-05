@@ -17,7 +17,7 @@ html::after {
 
 html.loaded::after {
   animation-play-state: paused;
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 @keyframes loaderAnim {
