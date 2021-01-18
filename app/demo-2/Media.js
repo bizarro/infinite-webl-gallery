@@ -24,7 +24,9 @@ export default class {
 
   createMesh () {
     const image = new Image()
-    const texture = new Texture(this.gl)
+    const texture = new Texture(this.gl, {
+      generateMipmaps: false
+    })
 
     image.src = this.image.src
     image.onload = _ => {
